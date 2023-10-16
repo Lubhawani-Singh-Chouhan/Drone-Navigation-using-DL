@@ -1,0 +1,176 @@
+\ProvidesPackage{sleek-listings}[2021/06/04 v1.1.0 Sleek Listings]
+
+%%%%%%%%%%%%%%%%
+% Requirements %
+%%%%%%%%%%%%%%%%
+
+\RequirePackage[scaled=0.95]{inconsolata}
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+
+%%%%%%%%%%%%
+% Settings %
+%%%%%%%%%%%%
+
+% Colors
+
+\def\ForestGreen{\color[HTML]{228B22}}
+\def\TrueBlue{\color[HTML]{0000FF}}
+\def\VeronicaPurple{\color[HTML]{A020F0}}
+
+\def\FreeSpeechRed{\color[HTML]{DD0000}}
+\def\SafetyOrange{\color[HTML]{FF7700}}
+\def\DarkMagenta{\color[HTML]{900090}}
+\def\IslamicGreen{\color[HTML]{00AA00}}
+
+%%%%%%%%%%%%
+% Commands %
+%%%%%%%%%%%%
+
+\newcommand{\NumberStyle}[1]{
+    \lstdefinestyle{#1Number}{
+        style=#1,
+        %%%%%
+        numbers=left
+    }
+}
+
+\newcommand{\FrameStyle}[1]{
+    \lstdefinestyle{#1Frame}{
+        style=#1,
+        %%%%%
+        frame=single,
+        framesep=0em,
+        rulesep=0em,
+        xleftmargin=0.75em,
+        xrightmargin=0.75em,
+        framexleftmargin=0.75em,
+        framexrightmargin=0.75em,
+        framextopmargin=1ex,
+        framexbottommargin=1ex
+    }
+}
+
+\newcommand{\FrameTBStyle}[1]{
+    \FrameStyle{#1}
+    \lstdefinestyle{#1FrameTB}{
+        style=#1Frame,
+        %%%%%
+        frame=tb,
+        xleftmargin=0em,
+        xrightmargin=0em,
+        framexleftmargin=0em,
+        framexrightmargin=0em
+    }
+}
+
+\newcommand{\FrameTBNumberStyle}[1]{
+    \FrameTBStyle{#1}
+    \NumberStyle{#1FrameTB}
+}
+
+\newcommand{\FrameNumberStyle}[1]{
+    \FrameStyle{#1}
+    \lstdefinestyle{#1FrameNumber}{
+        style=#1Frame,
+        %%%%%
+        xleftmargin=2.75em,
+        framexleftmargin=2.75em,
+        %%%%%
+        numbers=left,
+        numbersep=1em
+    }
+}
+
+%%%%%%%%%%
+% Styles %
+%%%%%%%%%%
+
+\lstdefinestyle{default}{
+    breaklines=true,
+    breakatwhitespace=true,
+    columns=fixed,
+    extendedchars=true,
+    upquote=true,
+    tabsize=4,
+    %%%%%
+    framerule=0.1em,
+    captionpos=b,
+    aboveskip=\baselineskip,
+    belowskip=\smallskipamount,
+    %%%%%
+    basicstyle=\small\ttfamily,
+    numberstyle=\small\ttfamily,
+    showstringspaces=false
+}
+
+\lstset{style=default}
+
+\NumberStyle{default}
+\FrameNumberStyle{default}
+\FrameTBNumberStyle{default}
+
+\lstdefinestyle{c}{
+    language=C,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={}
+}
+
+\lstdefinestyle{cpp}{
+    language=C++,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={std}
+}
+
+\lstdefinestyle{matlab}{
+    language=matlab,
+    style=default,
+    %%%%%
+    basicstyle=\small\fontfamily{pcr}\selectfont,
+    numberstyle=\small\fontfamily{pcr}\selectfont,
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={clearvars}
+}
+
+\lstdefinestyle{python}{
+    language=python,
+    style=default,
+    %%%%%
+    commentstyle=\FreeSpeechRed,
+    keywordstyle=[1]{\SafetyOrange},
+    keywordstyle=[2]{\DarkMagenta},
+    stringstyle=\IslamicGreen,
+    emphstyle=\SafetyOrange,
+    %%%%%
+    emph={as}
+}
+
+\lstdefinestyle{java}{
+    language=java,
+    style=default,
+    %%%%%
+    commentstyle=\ForestGreen,
+    keywordstyle=\TrueBlue,
+    stringstyle=\VeronicaPurple,
+    emphstyle=\TrueBlue,
+    %%%%%
+    emph={}
+}
+
+\endinput

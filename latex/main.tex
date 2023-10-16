@@ -1,0 +1,89 @@
+\documentclass[a4paper, 12pt]{report}
+
+%%%%%%%%%%%%
+% Packages %
+%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+
+\usepackage[parindent]{packages/sleek}
+\usepackage{packages/sleek-title}
+\usepackage{packages/sleek-theorems}
+\usepackage{packages/sleek-listings}
+
+\usepackage{packages/tikz-uml}
+
+\usepackage{color, colortbl}
+
+%%%%%%%%%%
+% Others %
+%%%%%%%%%%
+
+\definecolor{LightGray}{gray}{0.8}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Document information %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\logo{resources/pdf/logo-uliege.pdf}
+\institute{\textbf{University of Liège}}
+\faculty{School of Engineering and Computer Science}
+\title{Autonomous navigation of a drone in indoor environments}
+\subtitle{\textit{Master's thesis carried out to obtain the degree of Master of Science in Computer Science Engineering}}
+\author{\textit{Author}\\Maxime \textsc{Meurisse}}
+\supervisor{\textit{Supervisors}\\Pr. Pierre \textsc{Geurts}\\Ir. Christophe \textsc{Greffe}}
+\date{Academic year 2020-2021}
+
+%%%%%%%%%%%%%%
+% References %
+%%%%%%%%%%%%%%
+
+\addbibresource{resources/bib/references.bib}
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+
+\begin{document}
+    % ----- Title page ----- %
+
+    \maketitle
+
+	% ----- Abstract ----- %
+
+	\input{content/others/abstract}
+
+	% ----- Acknowledgments ----- %
+
+	\input{content/others/acknowledgments}
+
+	% ----- Lists ----- %
+
+	\tableofcontents
+
+	% ----- Content ----- %
+
+	\input{content/chapters/01}
+	\input{content/chapters/02}
+	\input{content/chapters/03}
+	\input{content/chapters/04}
+	\input{content/chapters/05}
+	\input{content/chapters/06}
+	\input{content/chapters/07}
+	\input{content/chapters/08}
+	\input{content/chapters/09}
+
+	% ----- References ----- %
+
+	\newpage
+
+	\printbibliography
+
+	% ----- Appendix ----- %
+
+	\appendix
+
+	\input{content/appendix/A}
+	\input{content/appendix/B}
+	\input{content/appendix/C}
+\end{document}
